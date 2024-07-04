@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
 import { uForm } from '../../Services/StudentActions/StudentActions'
-
+    
 function EditForm() {
 
     const {student} = useSelector(state=>state.studreducer)

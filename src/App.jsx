@@ -7,13 +7,11 @@ import EditForm from './Components/EditForm/EditForm'
 import DisplayData from './Components/DisplayData/DisplayData'
 import { Route, Routes } from 'react-router'
 
+
 function App() {
 
   return (
     <>
-     
-      
-
       <Routes>
         <Route path="/" element={<CreateForm />} />
         <Route path="/DisplayData" element={<DisplayData />} />

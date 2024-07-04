@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './CreateForm.css'
 import { useDispatch } from 'react-redux'
-import { cForm } from '../../Services/StudentActions/StudentActions';
+import { meddileWere } from '../../Services/StudentActions/StudentActions';
 import { useNavigate } from 'react-router';
 
 function CreateForm() {
@@ -24,7 +24,7 @@ function CreateForm() {
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(cForm(students));
+        dispatch(meddileWere(students));
         setIsSubmit(true)
 
         setStudents({

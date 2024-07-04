@@ -26,3 +26,19 @@ export const fdelete = (deleteid)=>{
         payload : deleteid,
     }
 }
+
+export const lodder = ()=>{
+    return{
+        type: 'LOADER',
+    }
+}
+
+export const meddileWere = (OneStudent)=>{
+    return(dispatch) =>{
+        dispatch(lodder())
+        setTimeout(() => {
+            dispatch(cForm(OneStudent))
+        }, 5000);
+    }
+}
+

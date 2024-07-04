@@ -1,9 +1,11 @@
 import generateUniqueId from 'generate-unique-id'
 import { getStuddata } from '../Helper'
+import { lodder } from '../StudentActions/StudentActions'
 
   const initialState = {
     allStudents: getStuddata('allStudentsRecord'),
-    student : null
+    student : null,
+    lodding: false,
   }
 
 function StudentReducer(state = initialState, action) {
@@ -18,7 +20,8 @@ function StudentReducer(state = initialState, action) {
         localStorage.setItem("allStudentsRecord",JSON.stringify(studdata))
         return{
           ...state,
-          allStudents : studdata
+          allStudents : studdata,
+          lodding : false
         }
 
         case 'EDITFORM':
@@ -29,7 +32,8 @@ function StudentReducer(state = initialState, action) {
           })
           return{
             ...state,
-            student : singalRec[0]
+            student : singalRec[0],
+          lodding : false,
           }
 
           case 'UPDATEFORM' :
@@ -46,6 +50,9 @@ function StudentReducer(state = initialState, action) {
             allStudents : UpadteStudRec,
             student : null,
           }
+
+          case "LOADER":
+            return{...state,lodding : true}
 
           case 'DELETEFORM':
             const deleteRec = [...state.allStudents]
